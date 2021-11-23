@@ -1,49 +1,49 @@
 const mongoose = require("mongoose");
 
-const {ObjectId} = mongoose.Schema;
+const { ObjectId } = mongoose.Schema;
 
 const itemSchema = new mongoose.Schema({
-    title :{
-        type: String,
-        required: true
+  title: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  country: {
+    type: String,
+    default: "Indonesia",
+  },
+  city: {
+    type: String,
+    required: true,
+  },
+  isPopular: {
+    type: Boolean,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  imageId: [
+    {
+      type: ObjectId,
+      ref: "Image",
     },
-    price :{
-        type: Number,
-        required: true
+  ],
+  featureId: [
+    {
+      type: ObjectId,
+      ref: "Feature",
     },
-    country :{
-        type: String,
-        default: "Indonesia"
+  ],
+  activityId: [
+    {
+      type: ObjectId,
+      ref: "Activity",
     },
-    city :{
-        type: String,
-        required: true
-    },
-    isPopular :{
-        type: Boolean,
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    imageId : [
-        {
-            type: ObjectId,
-            ref: 'Image'
-        }
-    ],
-    featureId : [
-        {
-            type: ObjectId,
-            ref: 'Feature'
-        }
-    ],
-    activityId : [
-        {
-            type: ObjectId,
-            ref: 'Activity'
-        }
-    ]
+  ],
 });
 
-module.exports = mongoose.mongoose.model("Item", itemSchema);
+module.exports = mongoose.model("Item", itemSchema);
