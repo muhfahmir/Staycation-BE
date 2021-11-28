@@ -87,6 +87,7 @@
     </div>
 </div>
 
+<%- include('show_modal_activity.ejs') %>
 <%- include('show_modal_feature.ejs') %>
 <%- include('../../../partials/js.ejs') %>
 <script>
@@ -94,13 +95,22 @@
         $("#dataTableActivity").DataTable();
     })
     // CKEDITOR.replace('description');
+    $('#dataTableActivity').on('click', '.button-update', function () {
+        let id = $(this).data('id');
+        let name = $(this).data('name')
+        let type = $(this).data('type');
+        $('#editModalActivity').modal('show');
+        $('.id').val(id);
+        $('.name').val(name);
+        $('.type').val(type);
+    })
 
     $('#dataTable').on('click', '.button-update', function () {
         let id = $(this).data('id');
         let name = $(this).data('name')
         let qty = $(this).data('qty')
         // console.log(id + name + nameBank + nomorRekening)
-        $('#editModal').modal('show');
+        $('#editModalFeature').modal('show');
 
         // ngirim melalui kelas
         $('.id').val(id);
