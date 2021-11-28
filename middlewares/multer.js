@@ -16,14 +16,6 @@ const storageMultiple = multer.diskStorage({
   },
 });
 
-const uploadMultiple = multer({
-  storage: storageMultiple,
-  limits: { fileSize: 1000000 },
-  fileFilter: function (req, file, cb) {
-    checkFileType(file, cb);
-  },
-}).array("image", 12);
-
 // Set storage engine
 const storage = multer.diskStorage({
   destination: "public/images",
@@ -32,7 +24,7 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({
+const uploadSingle = multer({
   storage: storage,
   limits: { fileSize: 1000000 },
   fileFilter: function (req, file, cb) {
@@ -40,10 +32,18 @@ const upload = multer({
   },
 }).single("image");
 
+const uploadMultiple = multer({
+  storage: storageMultiple,
+  limits: { fileSize: 1000000 },
+  fileFilter: function (req, file, cb) {
+    checkFileType(file, cb);
+  },
+}).array("image", 12);
+
 // // Check file Type
 function checkFileType(file, cb) {
   // Allowed ext
-  const fileTypes = /jpeg|jpg|png|gif/;
+  const fileTypes = /jpeg|jpg|png|gif|svg/;
   // Check ext
   const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
   // Check mime
@@ -56,4 +56,4 @@ function checkFileType(file, cb) {
   }
 }
 
-module.exports = { uploadMultiple, upload };
+module.exports = { uploadMultiple, uploadSingle };

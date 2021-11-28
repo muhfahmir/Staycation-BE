@@ -26,16 +26,16 @@
                        <td><%= bank[i].nomorRekening %></td>
                        <td><%= bank[i].name %></td>
                        <td>
-                         <img src="http://127.0.0.1:3000/<%= bank[i].imageUrl%>" alt=" imageUrl" height="70px"
-                           width="70px">
+                         <img src="http://127.0.0.1:3000/<%= bank[i].imageUrl%>" alt=" imageUrl" width="70px">
                        </td>
-                       <td class="d-flex">
-                         <a href="javascript:void()" class="btn btn-warning btn-circle btn-sm button-update"
-                           data-id="<%= bank[i].id %>" data-name="<%= bank[i].name %>"
-                           data-namebank="<%= bank[i].nameBank %>" data-nomorrekening="<%= bank[i].nomorRekening %>">
-                           <i class="fas fa-edit"></i>
-                         </a>
-                         <form action="/admin/bank/<%= bank[i].id %>?_method=DELETE" method="post" class="ml-2">
+                       <td>
+
+                         <form action="/admin/bank/<%= bank[i].id %>?_method=DELETE" method="post">
+                           <a href="javascript:void()" class="btn btn-warning btn-circle btn-sm button-update"
+                             data-id="<%= bank[i].id %>" data-name="<%= bank[i].name %>"
+                             data-namebank="<%= bank[i].nameBank %>" data-nomorrekening="<%= bank[i].nomorRekening %>">
+                             <i class="fas fa-edit"></i>
+                           </a>
                            <button type="submit" class="btn btn-danger btn-circle btn-sm">
                              <i class="fas fa-trash"></i>
                            </button>
