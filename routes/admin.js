@@ -5,7 +5,16 @@ const { route } = require(".");
 const adminController = require("../controllers/adminController");
 const { uploadSingle, uploadMultiple } = require("../middlewares/multer");
 
+const auth = require("../middlewares/auth");
+
 // routing
+
+// endpoint auth
+router.get("/signin", adminController.viewSignIn);
+router.post("/signin", adminController.actionSignIn);
+// ketika ingin menggunakan dashboard harus menggunakan authnya
+router.use(auth);
+router.get("/logout", adminController.actionSignOut);
 // endpoint dashobard
 router.get("/dashboard", adminController.viewDashboard);
 
