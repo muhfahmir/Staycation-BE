@@ -3,7 +3,9 @@ var mongoose = require("mongoose");
 
 // Connect to MongoDB via Mongoose
 seeder.connect(
-  "mongodb://127.0.0.1:27017/db_bwa_staycation",
+  // "mongodb://127.0.0.1:27017/db_bwa_staycation",
+  // "mongodb+srv://muhfahmir:muhfahmir@cluster0.ieype.mongodb.net/db_bwa_staycation?retryWrites=true&w=majority",
+  "mongodb://muhfahmir:Muhfahmir@cluster0-shard-00-00.ieype.mongodb.net:27017,cluster0-shard-00-01.ieype.mongodb.net:27017,cluster0-shard-00-02.ieype.mongodb.net:27017/db_bwa_staycation?ssl=true&replicaSet=atlas-9o3dsk-shard-0&authSource=admin&retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
 
@@ -1070,15 +1072,15 @@ var data = [
         _id: mongoose.Types.ObjectId("5e96cbe292b97300fc903322"),
         nameBank: "Mandiri",
         nomorRekening: "089898",
-        name: "elfin",
-        imageUrl: "images/logo bca.png",
+        name: "fahmi",
+        imageUrl: "images/logo mandiri.png",
       },
       {
         _id: mongoose.Types.ObjectId("5e96cbe292b97300fc903323"),
         nameBank: "BCA",
         nomorRekening: "878678",
-        name: "elfin",
-        imageUrl: "images/logo mandiri.png",
+        name: "fahmi",
+        imageUrl: "images/logo bca.png",
       },
     ],
   },

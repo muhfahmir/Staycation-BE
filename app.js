@@ -9,10 +9,14 @@ const flash = require("connect-flash");
 
 // import mongoose
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/db_bwa_staycation", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  // "mongodb+srv://muhfahmir:bwamern@cluster0.ieype.mongodb.net/db_bwa_staycation?retryWrites=true&w=majority",
+  "mongodb://muhfahmir:Muhfahmir@cluster0-shard-00-00.ieype.mongodb.net:27017,cluster0-shard-00-01.ieype.mongodb.net:27017,cluster0-shard-00-02.ieype.mongodb.net:27017/db_bwa_staycation?ssl=true&replicaSet=atlas-9o3dsk-shard-0&authSource=admin&retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 // mongoose.connect("mongodb://localhost:27017/db_bwa_staycation", {
 //   useUnifiedTopology: true,
 //   useCreateIndex: true,
