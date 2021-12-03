@@ -1,0 +1,14 @@
+bcrypt => gunanya sejenis password_hash jadi untuk mengencripsi
+connect-flash = > sejenis session tapi hanya muncul 1 kali saja
+express-session => ya sessionnya pada express
+fs-extra => pembuatan/pengcopyan folder untuk file dan untuk unlink (hapus file image)
+cookie-parser =>
+method-override => untuk mengaktifkan method delete & put
+mongoose => adalah mongodb
+morgan =>
+multer => middleware / validasi untuk upload file form data
+ejs => itu view yang disediakan oleh express jadi kalo dilaravel itu seperti blade
+startbootstrap-sb-admin-2 => template admin bs 2
+mocha => runner testing
+chai=> mengecheck api nya bener tidak
+chai-http=> yang mengirim request ke http endpoint(get,post,put,delete)
